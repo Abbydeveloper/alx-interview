@@ -15,7 +15,7 @@ def canUnlockAll(boxes):
     n = len(boxes)
     unlocked_boxes = [0]
 
-    for i in unlocked_boxes:
+    for i in range(n):
         for key in boxes[i]:
             if key not in unlocked_boxes and key < n:
                 unlocked_boxes.append(key)

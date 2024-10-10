@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Lockboxes """
 
+
 def canUnlockAll(boxes):
-    """ 
+    """
     Args: boxes - the number of locked boxes
 
     Return: True if all boxes can be opened, else return False

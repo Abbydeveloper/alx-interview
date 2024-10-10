@@ -8,6 +8,10 @@ def canUnlockAll(boxes):
 
     Return: True if all boxes can be opened, else return False
     """
+
+    if not boxes or type(boxes) is not list:
+        return False
+
     n = len(boxes)
     unlocked_boxes = []
 

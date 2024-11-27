@@ -12,7 +12,7 @@ def makeChange(coins, total):
     change_amt = 0
 
     sort_coins = sorted(coins)[::-1]
-    for coin in coins:
+    for coin in sort_coins:
         while coin <= total:
             total -= coin
             change_amt += 1

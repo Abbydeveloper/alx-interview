@@ -10,7 +10,7 @@ def rotate_2d_matrix(matrix):
         Returns:
             None
     """
-    length = len(matrix)
+    n = len(matrix)
 
     for i in range(n / 2):
         for j in range(n):

@@ -16,7 +16,7 @@ def island_perimeter(grid):
 
     for i in range(len(grid)):
         length = 0
-        for j in range(len(grid)):
+        for j in range(len(grid[i])):
             if grid[i][j] == 1:
                 if i == 0 or grid[i - 1][j] == 0:
                     length += 1

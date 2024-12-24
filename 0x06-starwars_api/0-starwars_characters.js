@@ -21,5 +21,5 @@ if (process.argv.length > 2) {
     Promise.all(charName)
       .then(names => console.log(names.join('\n')))
       .catch(allError => console.log(allError));
-    });
+  });
 }

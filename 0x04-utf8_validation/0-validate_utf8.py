@@ -14,7 +14,7 @@ def validUTF8(data):
         i = 0
         while num & mask:  # 11000110 & 100000
             mask >>= 1
-        i += 1
+            i += 1
         return i
 
     i = 0
@@ -26,7 +26,7 @@ def validUTF8(data):
             return False
         while i < len(data) and i <= k:
             cur = check(data[i])
-        if cur != 1:
-            return False
-        i += 1
+            if cur != 1:
+                return False
+            i += 1
     return True

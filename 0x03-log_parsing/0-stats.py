@@ -60,8 +60,8 @@ def main():
         if stat_code.isdecimal():
             log["code_list"][stat_code] += 1
 
-    if line_count % 10 == 0:
-        print_code(log)
+        if line_count % 10 == 0:
+            print_code(log)
 
 if __name__ == "__main__":
     main()

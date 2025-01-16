@@ -12,10 +12,9 @@ def isWinner(x, nums):
     Determine who the winner of each game is
     """
 
-    if (x <= 0 or
-        nums is None or
-        x != len(nums)):
-            return None
+    if (x <= 0 or nums is None or x != len(nums)):
+        return None
+        
     maria, ben = 0, 0
 
     choice = [1 for x in range(sorted(nums)[-1] + 1)]

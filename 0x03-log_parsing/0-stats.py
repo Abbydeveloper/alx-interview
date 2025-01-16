@@ -32,9 +32,9 @@ def print_code(log):
 
     sort_code = sorted(log["code_list"])
 
-    for code in sort_code:
-        if log["code_list"][code]:
-            print(f"{code}: {log['code_list'][code]}")
+    for key, val in sort_code.items():
+        if val != 0 and log["code_list"][key]:
+            print(f"{key}: {log['code_list'][key]}")
 
 
 def main():

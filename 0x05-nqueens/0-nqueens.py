@@ -54,22 +54,12 @@ def get_solutions(board):
     solutions = []
     for row in range(len(board)):
         for col in range(len(board)):
+            print(row, col)
+            print(col, row)
             if board[row][col] == "Q":
                 solutions.append([row, col])
                 break
     return (solutions)
-
-
-
-
-
-# def init_board(n):
-#     """
-#     Initialize a chessboard or side n x n
-#     """
-#     board = [["."] * n for i in range(n)]
-#     print(board)
-#     return board
 
 
 def main():

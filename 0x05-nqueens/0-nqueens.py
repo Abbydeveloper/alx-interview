@@ -38,7 +38,7 @@ def backtrack(r, n, board):
         neg_diag.add(r - c)
         board[r][c] = "Q"
 
-        backtrack(r + 1)
+        backtrack(r + 1, n, board)
 
         col.remove(c)
         pos_diag.remov(r + c)

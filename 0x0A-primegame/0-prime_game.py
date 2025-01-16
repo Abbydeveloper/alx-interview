@@ -13,8 +13,8 @@ def isWinner(x, nums):
     """
 
     if (x <= 0 or
-      nums is None or
-      x != len(nums)):
+        nums is None or
+        x != len(nums)):
         return None
     maria, ben = 0, 0
 
@@ -26,7 +26,7 @@ def isWinner(x, nums):
             choice[a * a] = 0
         except (ValueError, IndexError):
             break
-        
+
     for i in nums:
         if sum(choice[0:i + 1]) % 2 == 0:
             ben += 1

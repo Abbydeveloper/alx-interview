@@ -32,8 +32,14 @@ def isWinner(x, nums):
     #     return None
     # maria, ben = 0, 0
 
+<<<<<<< HEAD
     # choice = [1 for x in range(sorted(nums)[-1] + 1)]
     # choice[0], choice[1] = 0, 0
+=======
+    choice = [1 for x in range(sorted(nums)[-1] + 1)]
+    print(choice)
+    choice[0], choice[1] = 0, 0
+>>>>>>> 7a016210c89124e67566273ecbb16578bc902be5
 
     # for a in range(2, len(choice)):
     #     try:
@@ -41,11 +47,19 @@ def isWinner(x, nums):
     #     except (ValueError, IndexError):
     #         break
         
+<<<<<<< HEAD
     # for i in nums:
     #     if sum(choice[0:i + 1]) % 2 == 0:
     #         ben += 1
     #     else:
     #         maria += 1
+=======
+    for i in nums:
+        if sum(choice[0:i + 1]) % 2 == 0:
+            maria += 1
+        else:
+            ben += 1
+>>>>>>> 7a016210c89124e67566273ecbb16578bc902be5
 
     # if ben > maria:
     #     return "Ben"
@@ -67,6 +81,7 @@ def isWinner(x, nums):
         return "Ben"
     if maria > ben:
         return "Maria"
+<<<<<<< HEAD
 
 
     def round_winner(n, x):
@@ -101,3 +116,6 @@ def isWinner(x, nums):
                     del(list[val - i])
         return None
     return None
+=======
+    return None
+>>>>>>> 7a016210c89124e67566273ecbb16578bc902be5

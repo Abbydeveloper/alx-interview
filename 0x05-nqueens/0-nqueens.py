@@ -10,10 +10,21 @@ def nqueens(n):
     """
     place N non-attacking queens on an NxN chessboard
     """
+
     board = [["."] * n for i in range(n)]
     result = backtrack(0, n, board)
+    print(board)
     print(result)
     return result
+
+
+# def init_board(n):
+#     """
+#     Initialize a chessboard or side n x n
+#     """
+#     board = [["."] * n for i in range(n)]
+#     print(board)
+#     return board
 
 
 def backtrack(r, n, board):

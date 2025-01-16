@@ -33,7 +33,7 @@ def print_code(log):
     sort_code = sorted(log["code_list"])
 
     for code in sort_code:
-        if sort_code[code] != 0 and log["code_list"][code]:
+        if log["code_list"][code]:
             print(f"{code}: {log['code_list'][code]}")
 
 

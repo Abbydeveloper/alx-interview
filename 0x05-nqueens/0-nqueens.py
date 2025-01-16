@@ -5,38 +5,46 @@ N Queens
 
 import sys
 
+def nqueens(n):
+    """
+    place N non-attacking queens on an NxN chessboard
+    """
 
-def backtrack(r, n):
-    """
-    Backtrack algorithm
-    """
-    res = []
-    board = [["."] * n for i in range(n)]
     col = set()
     pos_diag = set()
     neg_diag = set()
 
+    res = []
+    board = [["."] * n for i in range(n)]
 
-    if r == n:
-        copy = ["".join(row) for row in board]
-        res.append(copy)
-        return
+    def backtrack(r):
+        """
+        Backtrack algorithm
+        """
 
-    for c in range(n):
-        if c in col or (r + c) in pos_diag or (r - c) in neg_diag:
-            continue
+        if r == n:
+            copy = ["".join(row) for row in board]
+            res.append(copy)
+            return
 
-        col.add(c)
-        pos_diag.add(r + c)
-        neg_diag.add(r - c)
-        board[r][c] = "Q"
+        for c in range(n):
+            if c in col or (r + c) in pos_diag or (r - c) in neg_diag:
+                continue
 
-        backtrack(r + 1, n)
+            col.add(c)
+            pos_diag.add(r + c)
+            neg_diag.add(r - c)
+            board[r][c] = "Q"
 
-        col.remove(c)
-        pos_diag.remove(r + c)
-        neg_diag.remove(r - c)
-        board[r][c] = "."
+            backtrack(r + 1, n)
+
+            col.remove(c)
+            pos_diag.remove(r + c)
+            neg_diag.remove(r - c)
+            board[r][c] = "."
+
+    backtrack(0)
+    print(res)
     return (res)
 
 def get_solutions(board):
@@ -53,20 +61,7 @@ def get_solutions(board):
     return (solutions)
 
 
-def nqueens(n):
-    """
-    place N non-attacking queens on an NxN chessboard
-    """
 
-    res = []
-    solved_board = backtrack(0, res, n)
-    print(res)
-    print(solved_board)
-    result = get_solutions(solved_board)
-
-    print(solved_board)
-    print(result)
-    return (result)
 
 
 # def init_board(n):

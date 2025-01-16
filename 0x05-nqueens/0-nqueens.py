@@ -3,6 +3,8 @@
 N Queens
 """
 
+import sys
+
 
 def nqueens(n):
     """
@@ -42,3 +44,25 @@ def backtrack(r, n, board):
         pos_diag.remov(r + c)
         neg_diag.remove(r - c)
         board[r][c] = "."
+
+
+def main():
+    """
+    Execute code
+    """
+
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        exit(1)
+    elif not sys.argv(1).isdigit():
+        print("N must be a number")
+        exit(1)
+    elif int(sys.argv[1] < 4):
+        print("N must be at least 4")
+        exit(1)
+
+    n = int(sys.argv[1])
+    nqueens(n)
+
+if __name__ == "__main__":
+    main()

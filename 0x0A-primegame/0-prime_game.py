@@ -26,7 +26,7 @@ def isWinner(x, nums):
 
     if (x <= 0 or nums is None or x != len(nums)):
         return None
-    
+
     maria, ben = 0, 0
 
     choice = [1 for x in range(sorted(nums)[-1] + 1)]
@@ -34,11 +34,6 @@ def isWinner(x, nums):
 
     for a in range(2, len(choice)):
         remove_prime_multiples(choice, a)
-        #try:
-
-        #choice[a * a] = 0
-        #except (ValueError, IndexError):
-            #break
 
     for i in nums:
         if sum(choice[0:i + 1]) % 2 == 0:

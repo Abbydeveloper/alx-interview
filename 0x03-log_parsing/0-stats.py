@@ -48,7 +48,7 @@ def main():
 
     line_count += 1
 
-    stat_code, file_size = int(stdin_line[0]), int(stdin_line[1])
+    stat_code, file_size = int(stdin_line[0]), stdin_line[1]
     # log["file_size"] += int(stdin_line[0])
     # stat_code = int(stdin_line[1])
     # log["code_list"]

@@ -81,7 +81,8 @@ def isWinner(x, nums):
                     return "Maria"
             else:
                 for i, val in enumerate(prime_indexes):
-                    del list[val - i]
+                    # del list[val - i]
+                    list[val - i] = 0
         return None
     
     maria = 0

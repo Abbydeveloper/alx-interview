@@ -6,6 +6,37 @@ N Queens
 import sys
 
 
+def backtrack(r, n, board):
+    """
+    Backtrack algorithm
+    """
+    res = []
+    col = set()
+    pos_diag = set()
+    neg_diag = set()
+
+    if r == n:
+        copy = ["".join(row) for row in board]
+        res.append(copy)
+        return
+
+    for c in range(n):
+        if c in col or (r + c) in pos_diag or (r - c) in neg_diag:
+            continue
+
+        col.add(c)
+        pos_diag.add(r + c)
+        neg_diag.add(r - c)
+        board[r][c] = "Q"
+
+        backtrack(r + 1, n, board)
+
+        col.remove(c)
+        pos_diag.remove(r + c)
+        neg_diag.remove(r - c)
+        board[r][c] = "."
+    return (board)
+
 def get_solutions(board):
     """
     Return the list of possibilities of the solved chessboard
@@ -42,37 +73,6 @@ def nqueens(n):
 #     print(board)
 #     return board
 
-
-def backtrack(r, n, board):
-    """
-    Backtrack algorithm
-    """
-    res = []
-    col = set()
-    pos_diag = set()
-    neg_diag = set()
-
-    if r == n:
-        copy = ["".join(row) for row in board]
-        res.append(copy)
-        return
-
-    for c in range(n):
-        if c in col or (r + c) in pos_diag or (r - c) in neg_diag:
-            continue
-
-        col.add(c)
-        pos_diag.add(r + c)
-        neg_diag.add(r - c)
-        board[r][c] = "Q"
-
-        backtrack(r + 1, n, board)
-
-        col.remove(c)
-        pos_diag.remove(r + c)
-        neg_diag.remove(r - c)
-        board[r][c] = "."
-    return (board)
 
 def main():
     """

@@ -15,7 +15,7 @@ def isWinner(x, nums):
     if (x <= 0 or
         nums is None or
         x != len(nums)):
-        return None
+            return None
     maria, ben = 0, 0
 
     choice = [1 for x in range(sorted(nums)[-1] + 1)]
@@ -29,12 +29,12 @@ def isWinner(x, nums):
 
     for i in nums:
         if sum(choice[0:i + 1]) % 2 == 0:
-            maria += 1
-        else:
             ben += 1
+        else:
+            maria += 1
 
     if ben > maria:
         return "Ben"
-    elif maria > ben:
+    if maria > ben:
         return "Maria"
     return None

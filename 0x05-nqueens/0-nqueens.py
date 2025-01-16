@@ -44,7 +44,6 @@ def backtrack(r, n, board):
         pos_diag.remov(r + c)
         neg_diag.remove(r - c)
         board[r][c] = "."
-<<<<<<< HEAD
 
 
 def main():
@@ -67,5 +66,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
->>>>>>> 95a2fdeee4a4d6ad6ba31e2a1744ad27bae1ae11

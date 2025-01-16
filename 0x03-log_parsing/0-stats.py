@@ -7,7 +7,7 @@ import sys
 
 
 def parse_log():
-  status_codes = [200, 301, 400, 403, 404, 405, 500]
+  status_codes = [200, 301, 400, 401, 403, 404, 405, 500]
 
   stdin_log = {"file_size": 0, "code_list": {str(code): 0 for code in status_codes}}
 
@@ -43,16 +43,19 @@ def main():
   line_count = 0
 
   for line in sys.stdin:
-    stdin_line = line.strip()
-    stdin_line = line[::-1]
+    stdin_line = line.split()
+    stdin_line = stdin_line[::-1]
 
     line_count += 1
 
-    stat_code, file_size = int(stdin_line[0]), stdin_line[1]
+    """stat_code, file_size = stdin_line[0], int(stdin_line[1])"""
+    file_size = stdin_line[0]
+    stat_code = stdin_line[1]
     # log["file_size"] += int(stdin_line[0])
     # stat_code = int(stdin_line[1])
     # log["code_list"]
-
+    print(file_size)
+    print(stat_code)
     log["file_size"] += int(file_size)
 
     if stat_code.isdecimal():

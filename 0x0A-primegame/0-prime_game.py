@@ -33,7 +33,7 @@ def isWinner(x, nums):
         choice = [i for i in range(1, n + 1)]
 
         for i in range(x):
-            player = "Maria" if i % 2 == 0 else "Ben"
+            player = "Ben" if i % 2 == 0 else "Maria"
             prime = -1
             prime_indexes = []
 

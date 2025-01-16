@@ -12,6 +12,7 @@ def nqueens(n):
     """
     board = [["."] * n for i in range(n)]
     result = backtrack(0, n, board)
+    print(result)
     return result
 
 

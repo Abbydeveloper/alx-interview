@@ -53,12 +53,13 @@ def get_solutions(board):
 
     solutions = []
     for row in range(len(board)):
-        for col in range(len(board)):
-            print(row, col)
-            print(col, row)
-            if board[row][col] == "Q":
-                solutions.append([row, col])
-                break
+        sol = ""
+        for col in range(len(board[row])):
+            sol = board[row][col]
+        for i in range(len(sol)):
+            if sol[i] == "Q":
+                solutions.append([row, i])
+            break
     return (solutions)
 
 

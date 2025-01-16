@@ -22,11 +22,10 @@ def isWinner(x, nums):
     choice[0], choice[1] = 0, 0
 
     for a in range(2, len(choice)):
-        for i in range(2, len(a)):
-            try:
-                choice[a * i] = 0
-            except (ValueError, IndexError):
-                break
+        try:
+            choice[a * a] = 0
+        except (ValueError, IndexError):
+            break
         
     for i in nums:
         if sum(choice[0:i + 1]) % 2 == 0:

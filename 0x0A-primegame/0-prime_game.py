@@ -53,29 +53,12 @@ def isWinner(x, nums):
     #     return "Maria"
     # return None
 
-    maria = 0
-    ben = 0
-
-    for i in range(x):
-        winner = round_winner(nums[i], x)
-        if winner is not None:
-            if winner == "Maria":
-                maria += 1
-            if winner == "Ben":
-                ben += 1
-    if ben > maria:
-        return "Ben"
-    if maria > ben:
-        return "Maria"
-
 
     def round_winner(n, x):
         """
           Find the winner of each round of the prime game
         """
         choice = [i for i in range(1, n + 1)]
-        ben = 0
-        maria = 0
 
         for i in range(x):
             player = "Maria" if i % 2 == 0 else "Ben"
@@ -100,4 +83,19 @@ def isWinner(x, nums):
                 for i, val in enumerate(prime_indexes):
                     del(list[val - i])
         return None
+    
+    maria = 0
+    ben = 0
+
+    for i in range(x):
+        winner = round_winner(nums[i], x)
+        if winner is not None:
+            if winner == "Maria":
+                maria += 1
+            if winner == "Ben":
+                ben += 1
+    if ben > maria:
+        return "Ben"
+    if maria > ben:
+        return "Maria"
     return None

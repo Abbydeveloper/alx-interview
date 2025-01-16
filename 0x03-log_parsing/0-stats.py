@@ -7,14 +7,23 @@ import sys
 
 
 def parse_log():
+  """
+    Store the file size and the HTTP status codes counts
+    in a dictionary stdin_log
+  """
+  
   status_codes = [200, 301, 400, 401, 403, 404, 405, 500]
 
   stdin_log = {"file_size": 0, "code_list": {str(code): 0 for code in status_codes}}
 
   return stdin_log
-  pass
 
 def print_code(log):
+  """
+    Print total file size, and the HTTP status codes count
+    in a sorted order
+  """
+
   print("File size: {}".format(log["file_size"]))
 
   sort_code = sorted(log["code_list"])
@@ -24,20 +33,11 @@ def print_code(log):
       print(f"{code}: {log['code_list'][code]}")
 
 
-
-# def parse_stdin_line(line, regex, log):
-#   match = regex.fullmatch(line)
-
-#   if match:
-#     stat_code, file_size = match.group(1, 2)
-
-#     log["file_size"] += int(file_size)
-
-#     if stat_code.isdecimal():
-#       log["code_list"][stat_code] += 1
-#   return log
-
 def main():
+  """
+    Parse the stdin stream and return the total file size,
+    as well as the count of HTTP status codes in a sorted order
+  """
 
   log = parse_log()
   line_count = 0
@@ -48,19 +48,13 @@ def main():
 
     line_count += 1
 
-    """stat_code, file_size = stdin_line[0], int(stdin_line[1])"""
     file_size = stdin_line[0]
     stat_code = stdin_line[1]
-    # log["file_size"] += int(stdin_line[0])
-    # stat_code = int(stdin_line[1])
-    # log["code_list"]
-    print(file_size)
-    print(stat_code)
+    
     log["file_size"] += int(file_size)
 
     if stat_code.isdecimal():
       log["code_list"][stat_code] += 1
-
 
     if line_count % 10 == 0:
       print_code(log)

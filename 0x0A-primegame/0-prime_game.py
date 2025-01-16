@@ -19,6 +19,7 @@ def isWinner(x, nums):
     maria, ben = 0, 0
 
     choice = [1 for x in range(sorted(nums)[-1] + 1)]
+    print(choice)
     choice[0], choice[1] = 0, 0
 
     for a in range(2, len(choice)):
@@ -29,9 +30,9 @@ def isWinner(x, nums):
         
     for i in nums:
         if sum(choice[0:i + 1]) % 2 == 0:
-            ben += 1
-        else:
             maria += 1
+        else:
+            ben += 1
 
     if ben > maria:
         return "Ben"

@@ -51,18 +51,19 @@ def main():
             stdin_line = line.split()
             stdin_line = stdin_line[::-1]
 
-            line_count += 1
+            if len(stdin_line) > 2:
+                line_count += 1
 
-            file_size = stdin_line[0]
-            stat_code = stdin_line[1]
+                file_size = stdin_line[0]
+                stat_code = stdin_line[1]
 
-            log["file_size"] += int(file_size)
+                log["file_size"] += int(file_size)
 
-            if stat_code.isdecimal():
-                log["code_list"][stat_code] += 1
+                if stat_code.isdecimal():
+                    log["code_list"][stat_code] += 1
 
-            if line_count % 10 == 0:
-                print_code(log)
+                if line_count % 10 == 0:
+                    print_code(log)
     finally:
         print_code(log)
 

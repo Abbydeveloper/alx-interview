@@ -37,7 +37,7 @@ def backtrack(r, n):
         pos_diag.remove(r + c)
         neg_diag.remove(r - c)
         board[r][c] = "."
-    return (board)
+    return (res)
 
 def get_solutions(board):
     """
@@ -58,7 +58,10 @@ def nqueens(n):
     place N non-attacking queens on an NxN chessboard
     """
 
-    solved_board = backtrack(0, n)
+    res = []
+    solved_board = backtrack(0, res, n)
+    print(res)
+    print(solved_board)
     result = get_solutions(solved_board)
 
     print(solved_board)

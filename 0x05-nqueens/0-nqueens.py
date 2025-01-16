@@ -5,6 +5,7 @@ N Queens
 
 import sys
 
+
 def nqueens(n):
     """
     place N non-attacking queens on an NxN chessboard
@@ -46,6 +47,7 @@ def nqueens(n):
     backtrack(0)
     return (res)
 
+
 def get_solutions(board):
     """
     Return the list of possibilities of the solved chessboard
@@ -55,12 +57,11 @@ def get_solutions(board):
 
     for row in range(len(board)):
         solutions.append([])
-        
+
         for col in range(len(board[row])):
             sol = [c for c in board[row][col]]
 
             for c in range(len(sol)):
-            
                 if sol[c] == "Q":
                     solutions[row].append([col, c])
                     break

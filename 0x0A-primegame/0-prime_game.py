@@ -29,9 +29,9 @@ def isWinner(x, nums):
 
     for i in nums:
         if sum(choice[0:i + 1]) % 2 == 0:
-            ben += 1
-        else:
             maria += 1
+        else:
+            ben += 1
 
     if ben > maria:
         return "Ben"

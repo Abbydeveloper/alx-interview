@@ -64,7 +64,7 @@ def main():
             if line_count % 10 == 0:
                 print_code(log)
     finally:
-        pring_code(log)
+        print_code(log)
 
 if __name__ == "__main__":
     main()

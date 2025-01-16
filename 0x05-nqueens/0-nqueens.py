@@ -54,7 +54,7 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         exit(1)
-    elif not sys.argv(1).isdigit():
+    elif not sys.argv[1].isdigit():
         print("N must be a number")
         exit(1)
     elif int(sys.argv[1] < 4):

@@ -6,16 +6,32 @@ N Queens
 import sys
 
 
+def get_solutions(board):
+    """
+    Return the list of possibilities of the solved chessboard
+    """
+
+    solutions = []
+    for row in range(len(board)):
+        for col in range(len(board)):
+            if board[row][col] == "Q":
+                solutions.append([row, col])
+                break
+    return (solutions)
+
+
 def nqueens(n):
     """
     place N non-attacking queens on an NxN chessboard
     """
 
     board = [["."] * n for i in range(n)]
-    result = backtrack(0, n, board)
+    solved_board = backtrack(0, n, board)
+    result = get_solutions(solved_board)
     print(board)
+    print(solved_board)
     print(result)
-    return result
+    return (result)
 
 
 # def init_board(n):
@@ -56,7 +72,7 @@ def backtrack(r, n, board):
         pos_diag.remove(r + c)
         neg_diag.remove(r - c)
         board[r][c] = "."
-
+    return (board)
 
 def main():
     """

@@ -36,7 +36,7 @@ def nqueens(n):
             neg_diag.add(r - c)
             board[r][c] = "Q"
 
-            backtrack(r + 1, n)
+            backtrack(r + 1)
 
             col.remove(c)
             pos_diag.remove(r + c)
@@ -44,7 +44,6 @@ def nqueens(n):
             board[r][c] = "."
 
     backtrack(0)
-    print(res)
     return (res)
 
 def get_solutions(board):
@@ -89,7 +88,9 @@ def main():
         exit(1)
 
     n = int(sys.argv[1])
-    nqueens(n)
+    board = nqueens(n)
+    solutions = get_solutions(board)
+    print(solutions)
 
 if __name__ == "__main__":
     main()

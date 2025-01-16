@@ -52,14 +52,18 @@ def get_solutions(board):
     """
 
     solutions = []
+
     for row in range(len(board)):
-        sol = ""
+        solutions.append([])
+        
         for col in range(len(board[row])):
-            sol = board[row][col]
-        for i in range(len(sol)):
-            if sol[i] == "Q":
-                solutions.append([row, i])
-            break
+            sol = [c for c in board[row][col]]
+
+            for c in range(len(sol)):
+            
+                if sol[c] == "Q":
+                    solutions[row].append([col, c])
+                    break
     return (solutions)
 
 
@@ -81,7 +85,8 @@ def main():
     n = int(sys.argv[1])
     board = nqueens(n)
     solutions = get_solutions(board)
-    print(solutions)
+    for solution in solutions:
+        print(solution)
 
 if __name__ == "__main__":
     main()
